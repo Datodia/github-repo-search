@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body > h1:nth-of-type(1) {
+    cursor: pointer
+  }
+
+  body {
+    background-color: white;
+    --title-bar-height: 42px;
+    padding-top: var(--title-bar-height);
+  }
+
+  #bar {
+    background: rgba(55, 60, 72, 0.6);
+    backdrop-filter: blur(64px);
+    -webkit-app-region: drag;
+    height: var(--title-bar-height);
+    padding: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #FFF;
+    white-space: nowrap;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  pear-ctrl[data-platform=darwin] {
+    margin-top: 18px;
+    margin-left: 12px;
+  }
+
+  .card-view > div {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin: 0.5em;
+  }
+
+  .table-view table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-view th,
+  .table-view td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  .table-view th {
+    background-color: #f2f2f2;
+  }
+
+  #controls {
+    margin-bottom: 1em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+  }
+
+  select, input[type="text"] {
+    padding: 0.5em;
+    font-size: 1em;
+  }
+  </style>
+  <script type='module' src='./app.js'></script>
+</head>
+<body>
+  <div id="bar"><pear-ctrl></pear-ctrl></div>
+  <div id="app"></div>
+</body>
+</html>
